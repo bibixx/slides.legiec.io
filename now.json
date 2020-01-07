@@ -1,6 +1,6 @@
 {
   "alias": ["slides.legiec.io"],
   "builds": [
-    { "src": "*.html", "use": "@now/static" },
+    { "src": "*.html", "use": "@now/static" }
   ]
 }
