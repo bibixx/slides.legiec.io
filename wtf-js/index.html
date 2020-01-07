@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WarsawJS Slides: Template</title>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,900&amp;subset=latin-ext" rel="stylesheet"/>
+
+    <!-- Shower Theme -->
+    <link rel="stylesheet" href="vendors/shower-ribbon/styles/screen-16x9.css"/>
+    <link rel="stylesheet" href="vendors/shower-warsawjs/styles/main.css"/>
+
+    <!-- Prism.js -->
+    <link rel="stylesheet" href="vendors/prism/prism.css"/>
+    <link rel="stylesheet" href="modules/custom-prism.css"/>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>WTF JS</h1>
+        <p>JS… wszyscy wiemy jak zbudowany jest ten język i ile jest w nim dziwnych i nielogicznych rzeczy. Postaram się opisać i wytłumaczyć choć część porąbanych rzeczy jakich możemy uświadczyć w JSie.</p>
+    </header>
+
+    <section class="slide front-page">
+        <div class="logo">
+            <img src="vendors/shower-warsawjs/images/logo.svg" width="400">
+        </div>
+        <div class="details">
+            <img src="pictures/bartek.png" alt="Bartek Legięć" width="200" />
+
+            <h2>Bartek Legięć</h2>
+
+            <h2><strong>„WTF JS?” [PL]</strong></h2>
+
+            <h2>2018-02-14</h2>
+
+            <h2>
+              <a href="http://twitter.com/bibix1999" target="_blank">@bibix1999</a>
+            </h2>
+        </div>
+    </section>
+
+    <section class="slide compact">
+      <h2>Adding values</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>
+          "3" - 2
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Adding values</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>
+          "3" + 2
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Adding values</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>[] + {}</code>
+        <code class="next">[].toString() + {}.toString()</code>
+        <code class="next">"" + "[object Object]"</code>
+        <code class="next">"[object Object]"</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Adding values</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>{} + []</code>
+        <code class="next">+ []</code>
+        <code class="next">0</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Adding values</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>[1, 2, 3] + [4, 5, 6]</code>
+        <code class="next">[1, 2, 3].toString() + [4, 5, 6].toString()</code>
+        <code class="next">"1,2,3" + "4,5,6"</code>
+        <code class="next">"1,2,34,5,6"</code>
+      </pre>
+    </section>
+
+
+    <section class="slide compact">
+      <h2>Multiplying strings</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>""*""</code>
+        <code class="next">""**""</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>MIN_VALUE</h2>
+        <pre style="font-size: 30px;" class="language-javascript">
+          <code>Number.MIN_VALUE > 0</code>
+          <code class="next">Number.MIN_VALUE // -> 5e-324 (5 * 10^-324)</code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>parseInt</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>parseInt("foo")</code>
+        <code class="next">parseInt("foo", 16)</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>parseInt</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>parseInt("Infinity")</code>
+        <code class="next">parseInt("Infinity", 19)</code>
+        <code class="next">parseInt("Infinity", 24) // -> 151176378</code>
+        <code class="next">parseInt("Infinity", 29) // -> 385849803</code>
+        <code class="next">parseInt("Infinity", 36) // -> 1461559270678</code>
+        <code class="next">parseInt("Infinity", 37) // -> NaN</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>Null comparison</h2>
+        <pre style="font-size: 30px;">
+            <code class="language-javascript">
+              null > 0
+            </code>
+            <code>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2><code>null > 0</code></h2>
+        <pre style="font-size: 30px;" class="language-javascript">
+            <code>null > 0</code>
+            <code class="next">+null > +0</code class="next">
+            <code class="next">0 > 0</code>
+            <code class="next">false</code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>Null comparison</h2>
+        <pre style="font-size: 30px;">
+            <code class="language-javascript">
+              null > 0
+              null == 0
+            </code>
+            <code>&nbsp;</code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2><code>null == 0</code></h2>
+        <pre style="font-size: 30px;" class="language-javascript">
+            <code>null == 0</code>
+            <code class="next">+null == +0</code>
+            <code class="next">0 == 0</code>
+            <code class="next">true</code>
+            <code class="next">// it should be like this right?</code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2><code>null == 0</code></h2>
+      <img src="pictures/loose_mdn.png" style="width: 100%;">
+    </section>
+
+    <section class="slide compact">
+        <h2>Null comparison</h2>
+        <pre style="font-size: 30px;">
+            <code class="language-javascript">
+              null > 0
+              null == 0
+              null >= 0
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2><code>null >= 0</code></h2>
+        <pre style="font-size: 30px;" class="language-javascript">
+            <code>null >= 0</code>
+            <code class="next">!(null < 0)</code>
+            <code class="next">!(+null < +0)</code>
+            <code class="next">!(0 < 0)</code>
+            <code class="next">!false</code>
+            <code class="next">true</code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>NaN comparison</h2>
+        <pre style="font-size: 30px;" class="language-javascript">
+            <code>1337 === 1337</code>
+            <code class="next">NaN === NaN</code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2><code>NaN === NaN</code></h2>
+
+      <pre class="code-list">
+        <p>1. If Type(x) is different from Type(y), return false.</p>
+        <p>2. If Type(x) is Number, then</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;a. If x is NaN, return false.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;b. If y is NaN, return false.</p>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Array comparison</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>
+          [] == []
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>Array comparison</h2>
+        <pre style="font-size: 30px;" class="language-javascript">
+          <code>[] == ![]</code>
+          <code class="next">[] == !true</code>
+          <code class="next">[] == false</code>
+          <code class="next">+[] == +false</code>
+          <code class="next">0 == 0</code>
+          <code class="next">true</code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Array comparison</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>[] == ""</code>
+        <code class="next">[].toString() == ""</code>
+        <code class="next">"" == ""</code>
+        <code class="next">true</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Array comparison</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>[0] == 0</code>
+        <code class="next">[0].toString() == 0</code>
+        <code class="next">"0" == 0</code>
+        <code class="next">+"0" == 0</code>
+        <code class="next">0 === 0</code>
+        <code class="next">true</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Array comparison</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>[[[[[[]]]]]] == 0</code>
+        <code class="next">[[[[[[].toString()]]]]] == 0</code>
+        <code class="next">[[[[[""].toString()]]]] == 0</code>
+        <code class="next">[[[[""].toString()]]] == 0</code>
+        <code class="next">[[[""].toString()]] == 0</code>
+        <code class="next">[[""].toString()] == 0</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Array comparison</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>[[""].toString()] == 0</code>
+        <code class="next">[""].toString() == 0</code>
+        <code class="next">"" == 0</code>
+        <code class="next">+"" == 0</code>
+        <code class="next">0 == 0</code>
+        <code class="next">true</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Array comparison</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>![] === ![]</code>
+        <code class="next">!true === !true</code>
+        <code class="next">false === false</code>
+        <code class="next">true</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Array comparison</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>["a","b","c"][3,2,1]</code>
+        <code class="next">["a","b","c"][(3,2,1)]</code>
+        <code class="next">["a","b","c"][1]</code>
+        <code class="next">"b"</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>map</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>["1", "2", "3"].map(parseInt)</code>
+        <code class="next">["1", "2", "3"].map((...args) => parseInt(...args))</code>
+        <code class="next">["1", "2", "3"].map((val, i) => parseInt(val, i))</code>
+        <code class="next">// [0] parseInt("1", 0) -> 1</code>
+        <code class="next">// [1] parseInt("2", 1) -> NaN</code>
+        <code class="next">// [2] parseInt("3", 2) -> NaN</code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>sort</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>
+          [10, 9, 8, 3, 2, 1, 0].sort()
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>match</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>"[]\\`".match(/[A-z]/g)</code>
+      </pre>
+    </section>
+
+    <section class="slide compact" style="display: flex; flex-direction: column;">
+      <h2>ASCII table</h2>
+      <div class="flex-table">
+        <span><strong>65</strong>&nbsp;&nbsp;A</span>
+        <span><strong>66</strong>&nbsp;&nbsp;B</span>
+        <span><strong>67</strong>&nbsp;&nbsp;C</span>
+        <span>...</span>
+        <span><strong>84</strong>&nbsp;&nbsp;T</span>
+        <span><strong>85</strong>&nbsp;&nbsp;U</span>
+        <span><strong>86</strong>&nbsp;&nbsp;V</span>
+        <span><strong>87</strong>&nbsp;&nbsp;W</span>
+        <span><strong>88</strong>&nbsp;&nbsp;X</span>
+        <span><strong>89</strong>&nbsp;&nbsp;Y</span>
+        <span><strong>90</strong>&nbsp;&nbsp;Z</span>
+        <span><strong>91</strong>&nbsp;&nbsp;[</span>
+        <span><strong>92</strong>&nbsp;&nbsp;\</span>
+        <span><strong>93</strong>&nbsp;&nbsp;]</span>
+        <span><strong>94</strong>&nbsp;&nbsp;^</span>
+        <span><strong>95</strong>&nbsp;&nbsp;_</span>
+        <span><strong>96</strong>&nbsp;&nbsp;`</span>
+        <span><strong>97</strong>&nbsp;&nbsp;a</span>
+        <span><strong>98</strong>&nbsp;&nbsp;b</span>
+        <span><strong>99</strong>&nbsp;&nbsp;c</span>
+        <span><strong>100</strong>&nbsp;&nbsp;d</span>
+        <span><strong>101</strong>&nbsp;&nbsp;e</span>
+        <span><strong>102</strong>&nbsp;&nbsp;f</span>
+        <span><strong>103</strong>&nbsp;&nbsp;g</span>
+        <span>...</span>
+        <span><strong>120</strong>&nbsp;&nbsp;x</span>
+        <span><strong>121</strong>&nbsp;&nbsp;y</span>
+        <span><strong>122</strong>&nbsp;&nbsp;z</span>
+      </div>
+    </section>
+
+    <section class="slide compact">
+      <h2>return</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>
+          function foo() {
+            return
+            {
+              bar: "hi"
+            };
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>return</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>
+          function foo() {
+            return;
+            {
+              bar: "hi"
+            };
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Is it possible?</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>
+          if (a == 0 && a == 1 && a == 2) {
+            console.log("Hi!");
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Is it possible?</h2>
+      <pre style="font-size: 30px;" class="language-javascript">
+        <code>
+          const a = {
+            i: 0,
+            toString: function() {
+              return this.i++;
+            }
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide compact">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://github.com/bibixx/wtf.js-slides">https://github.com/bibixx/wtf.js-slides</a></li>
+        <li><a href="https://developer.mozilla.org/">https://developer.mozilla.org/</a></li>
+        <li><a href="https://www.ecma-international.org/ecma-262/">https://www.ecma-international.org/ecma-262/</a></li>
+        <li><a href="https://gist.github.com/MichalZalecki/c964192f830360ce636">https://gist.github.com/MichalZalecki/c964192f830360ce636</a></li>
+      </ul>
+    </section>
+
+    <div class="progress"></div>
+
+    <footer class="badge">
+        <a href="https://github.com/warsawjs/warsawjs-slides-template">Fork me on GitHub</a>
+    </footer>
+
+    <footer class="badge badge-top-left">
+        <a href="#" class="fullscreen">Fullscreen</a>
+    </footer>
+
+    <script src="vendors/gamepad/gamepad.js"></script>
+    <script src="vendors/shower/shower.min.js"></script>
+    <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
+    <script src="vendors/shower-warsawjs/scripts/fullscreen.js"></script>
+
+    <!-- Prism.js -->
+    <script src="vendors/prism/prism.js"></script>
+    <script src="modules/custom-prism.js"></script>
+</body>
+</html>

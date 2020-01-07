@@ -1,0 +1,73 @@
+/* Custom style for prism.css */
+
+.slide.prism {
+    padding: 0 30px 0;
+}
+
+.slide.prism h2 {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.slide.prism pre[class*="language-"] {
+    background: none;
+    margin: 0;
+    padding-top: 0.5em;
+}
+
+.slide.prism pre[class*="language-"] code {
+    line-height: 50px;
+}
+
+.slide.prism pre[class*="language-"].line-numbers {
+    padding-left: 2.5em;
+}
+
+.slide.prism pre[class*="language-"].line-numbers code {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+:not(pre) > code, pre {
+  background: #EBEBEB;
+  border-radius: 4px;
+}
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+  background: none;
+}
+
+.slide pre .comment {
+  color: #01AD41;
+}
+
+.code-list {
+  padding: 8px 16px;
+}
+
+.code-list p {
+  margin: 0;
+}
+
+.slide pre mark {
+  padding: .1em .3em;
+  border-radius: .2em;
+  margin: 0 -.3em;
+  background: #f7302f;
+  color: #fff;
+  z-index: auto;
+  padding-top: .2em;
+}
+
+.slide pre code:not(:only-child)::before {
+  content: none;
+}
+
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+}
