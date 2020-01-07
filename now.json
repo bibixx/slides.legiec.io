@@ -1,5 +1,5 @@
 {
-  "alias": ["slides.legiec.io"]
+  "alias": ["slides.legiec.io"],
   "builds": [
     { "src": "*.html", "use": "@now/static" },
   ]
