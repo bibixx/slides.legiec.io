@@ -10,8 +10,8 @@ const TALKS: Talk[] = [
   {
     location: "WarsawJS #106",
     date: new Date(2023, 7, 9),
-    url: "/figma-design-tokens",
-    img: "/figma-design-tokens/poster.png",
+    url: "/figma-tokens",
+    img: "/figma-tokens/poster.png",
   },
   {
     location: "WarsawJS #65",
