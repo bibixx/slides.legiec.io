@@ -8,6 +8,12 @@ interface Talk {
 }
 const TALKS: Talk[] = [
   {
+    location: "WarsawJS #107",
+    date: new Date(2023, 8, 13),
+    url: "/not-legal-advice",
+    img: "/not-legal-advice/poster.png",
+  },
+  {
     location: "WarsawJS #106",
     date: new Date(2023, 7, 9),
     url: "/figma-tokens",
