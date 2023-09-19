@@ -10,6 +10,13 @@ interface Talk {
 }
 const TALKS: Talk[] = [
   {
+    location: "Engineering Thesis Defense",
+    date: new Date(2023, 8, 20),
+    url: "/thesis-defence",
+    img: "/thesis-defence/poster.png",
+    pdf: "/thesis-defence",
+  },
+  {
     location: "WarsawJS #107",
     date: new Date(2023, 8, 13),
     url: "/not-legal-advice",
