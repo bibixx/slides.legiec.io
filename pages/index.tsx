@@ -14,7 +14,6 @@ const TALKS: Talk[] = [
     date: new Date(2023, 8, 20),
     url: "/thesis-defence",
     img: "/thesis-defence/poster.png",
-    pdf: "/thesis-defence",
   },
   {
     location: "WarsawJS #107",
