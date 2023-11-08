@@ -24,6 +24,7 @@ const TALKS: Talk[] = [
     date: new Date(2023, 10, 8),
     url: "/linux-from-scratch",
     img: "/linux-from-scratch/poster.png",
+    file: "/linux-from-scratch/linux-from-scratch.pdf",
   },
   {
     location: "Engineering Thesis Defense",
